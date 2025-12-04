@@ -1,3 +1,4 @@
+// or gate with data flow model 
 module or_gate(
 	input a,
 	input b,
