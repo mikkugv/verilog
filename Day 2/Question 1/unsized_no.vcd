@@ -1,0 +1,46 @@
+$date
+	Sun Dec  7 21:11:54 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module unsized_no_tb $end
+$var wire 16 ! hex_output [15:0] $end
+$var wire 8 " bi_output [7:0] $end
+$var reg 8 # bi_input [7:0] $end
+$var reg 16 $ hex_input [15:0] $end
+$scope module dut $end
+$var wire 8 % bi_input [7:0] $end
+$var wire 8 & bi_output [7:0] $end
+$var wire 16 ' hex_input [15:0] $end
+$var wire 16 ( hex_output [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b101001110101 (
+b101001110101 '
+b1001 &
+b1001 %
+b101001110101 $
+b1001 #
+b1001 "
+b101001110101 !
+$end
+#10
+b101100010111 !
+b101100010111 (
+b101100010111 $
+b101100010111 '
+b1010 "
+b1010 &
+b1010 #
+b1010 %
+#20
