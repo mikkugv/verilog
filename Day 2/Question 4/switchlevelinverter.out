@@ -1,0 +1,49 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x6215134f4630 .scope module, "switchlevelinverter_tb" "switchlevelinverter_tb" 2 1;
+ .timescale 0 0;
+v0x621513506130_0 .var "in", 0 0;
+RS_0x72faa45cf0a8 .resolv tri, L_0x6215135062d0, L_0x621513506430;
+v0x621513506200_0 .net8 "out", 0 0, RS_0x72faa45cf0a8;  2 drivers, strength-aware
+S_0x6215134f47c0 .scope module, "dut" "switchlevelinverter" 2 5, 3 1 0, S_0x6215134f4630;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x72faa4586018 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+L_0x6215135062d0 .functor PMOS 1, v0x621513506130_0, L_0x72faa4586018, C4<0>, C4<0>;
+L_0x72faa4586060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0x621513506430 .functor NMOS 1, v0x621513506130_0, L_0x72faa4586060, C4<0>, C4<0>;
+v0x6215134f49a0_0 .net/2u *"_ivl_0", 0 0, L_0x72faa4586018;  1 drivers
+v0x621513505e60_0 .net/2u *"_ivl_2", 0 0, L_0x72faa4586060;  1 drivers
+v0x621513505f40_0 .net "in", 0 0, v0x621513506130_0;  1 drivers
+v0x621513506010_0 .net8 "out", 0 0, RS_0x72faa45cf0a8;  alias, 2 drivers, strength-aware
+    .scope S_0x6215134f4630;
+T_0 ;
+    %vpi_call 2 10 "$monitor", "$time=%0t|in=%b|out=%b", $time, v0x621513506130_0, v0x621513506200_0 {0 0 0};
+    %vpi_call 2 11 "$dumpfile", "switchlevelinverter.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x6215134f4630 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x621513506130_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x621513506130_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x621513506130_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 16 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "switchlevelinverter_tb.v";
+    "switchlevelinverter.v";
