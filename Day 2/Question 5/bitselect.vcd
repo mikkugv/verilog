@@ -1,0 +1,35 @@
+$date
+	Mon Dec  8 16:49:31 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module bitselect_tb $end
+$var wire 1 ! bit3 $end
+$var reg 8 " a [7:0] $end
+$scope module dut $end
+$var wire 8 # a [7:0] $end
+$var wire 1 ! bit3 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx #
+bx "
+x!
+$end
+#10
+1!
+b1001110 "
+b1001110 #
+#20
+0!
+b1010011 "
+b1010011 #
