@@ -1,0 +1,45 @@
+$date
+	Tue Dec  9 12:34:00 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module bitwise_operator_tb $end
+$var wire 4 ! xor_o [3:0] $end
+$var wire 4 " or_o [3:0] $end
+$var wire 4 # not_o [3:0] $end
+$var wire 4 $ and_o [3:0] $end
+$var reg 4 % a [3:0] $end
+$var reg 4 & b [3:0] $end
+$scope module dut $end
+$var wire 4 ' a [3:0] $end
+$var wire 4 ( and_o [3:0] $end
+$var wire 4 ) b [3:0] $end
+$var wire 4 * not_o [3:0] $end
+$var wire 4 + or_o [3:0] $end
+$var wire 4 , xor_o [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b110 ,
+b1110 +
+b101 *
+b1100 )
+b1000 (
+b1010 '
+b1100 &
+b1010 %
+b1000 $
+b101 #
+b1110 "
+b110 !
+$end
+#10
