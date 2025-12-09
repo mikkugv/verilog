@@ -1,0 +1,33 @@
+$date
+	Tue Dec  9 14:50:05 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module concatenation_operator_tb $end
+$var wire 8 ! y [7:0] $end
+$var reg 4 " a [3:0] $end
+$var reg 4 # b [3:0] $end
+$scope module dut $end
+$var wire 4 $ a [3:0] $end
+$var wire 4 % b [3:0] $end
+$var wire 8 & y [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10100110 &
+b110 %
+b1010 $
+b110 #
+b1010 "
+b10100110 !
+$end
+#10
