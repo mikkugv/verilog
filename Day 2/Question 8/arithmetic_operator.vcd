@@ -1,0 +1,41 @@
+$date
+	Tue Dec  9 13:16:14 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module arithmetic_operator_tb $end
+$var wire 5 ! sub [4:0] $end
+$var wire 5 " mul [4:0] $end
+$var wire 5 # add [4:0] $end
+$var reg 4 $ a [3:0] $end
+$var reg 4 % b [3:0] $end
+$scope module dut $end
+$var wire 4 & a [3:0] $end
+$var wire 4 ' b [3:0] $end
+$var wire 5 ( sub [4:0] $end
+$var wire 5 ) mul [4:0] $end
+$var wire 5 * add [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1000 *
+b1111 )
+b10 (
+b11 '
+b101 &
+b11 %
+b101 $
+b1000 #
+b1111 "
+b10 !
+$end
+#10
