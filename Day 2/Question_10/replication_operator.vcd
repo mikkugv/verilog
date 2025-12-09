@@ -1,0 +1,29 @@
+$date
+	Tue Dec  9 15:24:32 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module replication_operator_tb $end
+$var wire 6 ! y [5:0] $end
+$var reg 2 " a [1:0] $end
+$scope module dut $end
+$var wire 2 # a [1:0] $end
+$var wire 6 $ y [5:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b101010 $
+b10 #
+b10 "
+b101010 !
+$end
+#10
