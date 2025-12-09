@@ -1,0 +1,33 @@
+$date
+	Tue Dec  9 15:54:56 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module shift_operator_tb $end
+$var wire 4 ! rshift [3:0] $end
+$var wire 4 " lshift [3:0] $end
+$var reg 4 # a [3:0] $end
+$scope module dut $end
+$var wire 4 $ a [3:0] $end
+$var wire 4 % rshift [3:0] $end
+$var wire 4 & lshift [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b100 &
+b101 %
+b1010 $
+b1010 #
+b100 "
+b101 !
+$end
+#10
