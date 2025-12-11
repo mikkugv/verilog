@@ -1,0 +1,52 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x6327c28ef520 .scope module, "tristate_buffer_tb" "tristate_buffer_tb" 2 1;
+ .timescale 0 0;
+v0x6327c2901b70_0 .var "a", 0 0;
+v0x6327c2901c10_0 .var "en", 0 0;
+v0x6327c2901ce0_0 .net "y", 0 0, L_0x6327c2901de0;  1 drivers
+S_0x6327c28ef6b0 .scope module, "dut" "tristate_buffer" 2 5, 3 1 0, S_0x6327c28ef520;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "en";
+    .port_info 2 /OUTPUT 1 "y";
+o0x79b68c59d018 .functor BUFZ 1, C4<z>; HiZ drive
+; Elide local net with no drivers, v0x6327c28dbc50_0 name=_ivl_0
+v0x6327c29018d0_0 .net "a", 0 0, v0x6327c2901b70_0;  1 drivers
+v0x6327c2901990_0 .net "en", 0 0, v0x6327c2901c10_0;  1 drivers
+v0x6327c2901a30_0 .net "y", 0 0, L_0x6327c2901de0;  alias, 1 drivers
+L_0x6327c2901de0 .functor MUXZ 1, o0x79b68c59d018, v0x6327c2901b70_0, v0x6327c2901c10_0, C4<>;
+    .scope S_0x6327c28ef520;
+T_0 ;
+    %vpi_call 2 11 "$monitor", "$time=%0t ,a=%b en=%b y=%b", $time, v0x6327c2901b70_0, v0x6327c2901c10_0, v0x6327c2901ce0_0 {0 0 0};
+    %vpi_call 2 12 "$dumpfile", "tristate_buffer.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x6327c28ef520 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6327c2901b70_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6327c2901c10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6327c2901b70_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6327c2901c10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6327c2901c10_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tristate_buffer_tb.v";
+    "tristate_buffer.v";
