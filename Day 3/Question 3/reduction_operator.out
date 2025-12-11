@@ -1,0 +1,45 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x612811a86d90 .scope module, "reduction_operator_tb" "reduction_operator_tb" 2 1;
+ .timescale 0 0;
+v0x612811a992f0_0 .var "a", 3 0;
+v0x612811a993d0_0 .net "and_r", 0 0, L_0x612811a99640;  1 drivers
+v0x612811a99470_0 .net "or_r", 0 0, L_0x612811a99780;  1 drivers
+v0x612811a99570_0 .net "xor_r", 0 0, L_0x612811a99870;  1 drivers
+S_0x612811a86f20 .scope module, "dut" "reduction_operator" 2 5, 3 1 0, S_0x612811a86d90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /OUTPUT 1 "and_r";
+    .port_info 2 /OUTPUT 1 "or_r";
+    .port_info 3 /OUTPUT 1 "xor_r";
+v0x612811a87170_0 .net "a", 3 0, v0x612811a992f0_0;  1 drivers
+v0x612811a99050_0 .net "and_r", 0 0, L_0x612811a99640;  alias, 1 drivers
+v0x612811a99110_0 .net "or_r", 0 0, L_0x612811a99780;  alias, 1 drivers
+v0x612811a991b0_0 .net "xor_r", 0 0, L_0x612811a99870;  alias, 1 drivers
+L_0x612811a99640 .reduce/and v0x612811a992f0_0;
+L_0x612811a99780 .reduce/or v0x612811a992f0_0;
+L_0x612811a99870 .reduce/xor v0x612811a992f0_0;
+    .scope S_0x612811a86d90;
+T_0 ;
+    %vpi_call 2 12 "$monitor", $time, " a=%b | AND=%b | OR=%b | XOR=%b", v0x612811a992f0_0, v0x612811a993d0_0, v0x612811a99470_0, v0x612811a99570_0 {0 0 0};
+    %vpi_call 2 13 "$dumpfile", "reduction_operator.vcd" {0 0 0};
+    %vpi_call 2 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x612811a86d90 {0 0 0};
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v0x612811a992f0_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 16 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "reduction_operator_tb.v";
+    "reduction_operator.v";
