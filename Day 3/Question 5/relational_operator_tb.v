@@ -12,7 +12,7 @@ relational_operator dut(
 initial begin
 $monitor($time, " a=%d b=%d | gt=%b lt=%b eq=%b", a, b, gt, lt, eq);
 $dumpfile("relational_operator.vcd");
-$dumpvars(0, relational_operator_tb);
+$dumpvars(0,relational_operator_tb);
 a = 5; b = 3; #10;
 $finish;
 end
