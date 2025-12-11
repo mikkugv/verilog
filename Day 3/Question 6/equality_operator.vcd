@@ -1,0 +1,35 @@
+$date
+	Thu Dec 11 15:37:51 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module equality_operator_tb $end
+$var wire 1 ! neq $end
+$var wire 1 " eq $end
+$var reg 4 # a [3:0] $end
+$var reg 4 $ b [3:0] $end
+$scope module dut $end
+$var wire 4 % a [3:0] $end
+$var wire 4 & b [3:0] $end
+$var wire 1 ! neq $end
+$var wire 1 " eq $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b100 &
+b100 %
+b100 $
+b100 #
+1"
+0!
+$end
+#10
