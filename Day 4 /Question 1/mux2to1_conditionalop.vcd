@@ -1,0 +1,37 @@
+$date
+	Fri Dec 12 11:40:26 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module mux2to1_conditionalop_tb $end
+$var wire 1 ! y $end
+$var reg 1 " a $end
+$var reg 1 # b $end
+$var reg 1 $ s $end
+$scope module uut $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 $ s $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0$
+1#
+0"
+0!
+$end
+#10
+1$
+0#
+1"
+#20
