@@ -1,0 +1,42 @@
+$date
+	Fri Dec 12 20:35:38 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module mux2to1_bitselect_tb $end
+$var wire 1 ! out $end
+$var reg 2 " in [1:0] $end
+$var reg 1 # sel $end
+$scope module uut $end
+$var wire 2 $ in [1:0] $end
+$var wire 1 # sel $end
+$var wire 1 ! out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 $
+0#
+b1 "
+1!
+$end
+#10
+0!
+1#
+#20
+0#
+0!
+b10 "
+b10 $
+#30
+1!
+1#
+#40
