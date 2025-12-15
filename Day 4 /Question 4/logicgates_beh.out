@@ -1,0 +1,115 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5a1c9170a930 .scope module, "logicgates_beh_tb" "logicgates_beh_tb" 2 1;
+ .timescale 0 0;
+v0x5a1c91721a20_0 .var "a", 0 0;
+v0x5a1c91721ae0_0 .net "and_y", 0 0, v0x5a1c917212d0_0;  1 drivers
+v0x5a1c91721bb0_0 .var "b", 0 0;
+v0x5a1c91721cb0_0 .net "nand_y", 0 0, v0x5a1c91721430_0;  1 drivers
+v0x5a1c91721d80_0 .net "nor_y", 0 0, v0x5a1c917214f0_0;  1 drivers
+v0x5a1c91721e20_0 .net "not_y", 0 0, v0x5a1c91721600_0;  1 drivers
+v0x5a1c91721ef0_0 .net "or_y", 0 0, v0x5a1c917216c0_0;  1 drivers
+v0x5a1c91721fc0_0 .net "xnor_y", 0 0, v0x5a1c91721780_0;  1 drivers
+v0x5a1c91722090_0 .net "xor_y", 0 0, v0x5a1c91721840_0;  1 drivers
+S_0x5a1c9170aac0 .scope module, "dut" "logicgates_beh" 2 5, 3 1 0, S_0x5a1c9170a930;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "and_y";
+    .port_info 3 /OUTPUT 1 "or_y";
+    .port_info 4 /OUTPUT 1 "not_y";
+    .port_info 5 /OUTPUT 1 "nand_y";
+    .port_info 6 /OUTPUT 1 "nor_y";
+    .port_info 7 /OUTPUT 1 "xor_y";
+    .port_info 8 /OUTPUT 1 "xnor_y";
+v0x5a1c916fa480_0 .net "a", 0 0, v0x5a1c91721a20_0;  1 drivers
+v0x5a1c917212d0_0 .var "and_y", 0 0;
+v0x5a1c91721390_0 .net "b", 0 0, v0x5a1c91721bb0_0;  1 drivers
+v0x5a1c91721430_0 .var "nand_y", 0 0;
+v0x5a1c917214f0_0 .var "nor_y", 0 0;
+v0x5a1c91721600_0 .var "not_y", 0 0;
+v0x5a1c917216c0_0 .var "or_y", 0 0;
+v0x5a1c91721780_0 .var "xnor_y", 0 0;
+v0x5a1c91721840_0 .var "xor_y", 0 0;
+E_0x5a1c91708720 .event anyedge, v0x5a1c916fa480_0, v0x5a1c91721390_0;
+    .scope S_0x5a1c9170aac0;
+T_0 ;
+    %wait E_0x5a1c91708720;
+    %load/vec4 v0x5a1c916fa480_0;
+    %load/vec4 v0x5a1c91721390_0;
+    %and;
+    %store/vec4 v0x5a1c917212d0_0, 0, 1;
+    %load/vec4 v0x5a1c916fa480_0;
+    %load/vec4 v0x5a1c91721390_0;
+    %or;
+    %store/vec4 v0x5a1c917216c0_0, 0, 1;
+    %load/vec4 v0x5a1c916fa480_0;
+    %inv;
+    %store/vec4 v0x5a1c91721600_0, 0, 1;
+    %load/vec4 v0x5a1c916fa480_0;
+    %load/vec4 v0x5a1c91721390_0;
+    %and;
+    %inv;
+    %store/vec4 v0x5a1c91721430_0, 0, 1;
+    %load/vec4 v0x5a1c916fa480_0;
+    %load/vec4 v0x5a1c91721390_0;
+    %or;
+    %inv;
+    %store/vec4 v0x5a1c917214f0_0, 0, 1;
+    %load/vec4 v0x5a1c916fa480_0;
+    %load/vec4 v0x5a1c91721390_0;
+    %xor;
+    %store/vec4 v0x5a1c91721840_0, 0, 1;
+    %load/vec4 v0x5a1c916fa480_0;
+    %load/vec4 v0x5a1c91721390_0;
+    %xor;
+    %inv;
+    %store/vec4 v0x5a1c91721780_0, 0, 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x5a1c9170a930;
+T_1 ;
+    %vpi_call 2 17 "$monitor", "$time=%0t|a=%b|b=%b|and_y=%b|or_y=%b|not_y=%b|nand_y=%b|nor_y=%b|xor_y|xnor_y", $time, v0x5a1c91721a20_0, v0x5a1c91721bb0_0, v0x5a1c91721ae0_0, v0x5a1c91721ef0_0, v0x5a1c91721e20_0, v0x5a1c91721cb0_0, v0x5a1c91721d80_0, v0x5a1c91722090_0, v0x5a1c91721fc0_0 {0 0 0};
+    %vpi_call 2 18 "$dumpfile", "logicgates_beh.vcd" {0 0 0};
+    %vpi_call 2 19 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5a1c9170a930 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a1c91721a20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a1c91721bb0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a1c91721a20_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5a1c91721bb0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5a1c91721a20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a1c91721bb0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5a1c91721a20_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5a1c91721bb0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 1, 1;
+    %store/vec4 v0x5a1c91721a20_0, 0, 1;
+    %pushi/vec4 0, 1, 1;
+    %store/vec4 v0x5a1c91721bb0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 25 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "logicgates_beh_tb.v";
+    "logicgates_beh.v";
