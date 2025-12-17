@@ -1,0 +1,66 @@
+$date
+	Wed Dec 17 15:03:36 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module muxNto1_tb $end
+$var wire 1 ! Y $end
+$var parameter 32 " N $end
+$var parameter 32 # SEL $end
+$var reg 8 $ I [7:0] $end
+$var reg 3 % S [2:0] $end
+$scope module dut $end
+$var wire 8 & I [7:0] $end
+$var wire 3 ' S [2:0] $end
+$var parameter 32 ( N $end
+$var parameter 32 ) SEL $end
+$var reg 1 ! Y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b11 )
+b1000 (
+b11 #
+b1000 "
+$end
+#0
+$dumpvars
+b0 '
+b10101100 &
+b0 %
+b10101100 $
+0!
+$end
+#10
+b1 %
+b1 '
+#20
+1!
+b10 %
+b10 '
+#30
+b11 %
+b11 '
+#40
+0!
+b100 %
+b100 '
+#50
+1!
+b101 %
+b101 '
+#60
+0!
+b110 %
+b110 '
+#70
+1!
+b111 %
+b111 '
+#80
