@@ -1,0 +1,85 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5e1469149960 .scope module, "mux4to1using2to1_tb" "mux4to1using2to1_tb" 2 1;
+ .timescale 0 0;
+v0x5e14691627a0_0 .var "i0", 0 0;
+v0x5e1469162860_0 .var "i1", 0 0;
+v0x5e1469162900_0 .var "i2", 0 0;
+v0x5e14691629d0_0 .var "i3", 0 0;
+v0x5e1469162aa0_0 .var "s0", 0 0;
+v0x5e1469162b40_0 .var "s1", 0 0;
+v0x5e1469162c10_0 .net "y", 0 0, L_0x5e1469162fe0;  1 drivers
+S_0x5e1469149af0 .scope module, "dut" "mux4to1using2to1" 2 6, 3 1 0, S_0x5e1469149960;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "i0";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+    .port_info 3 /INPUT 1 "i3";
+    .port_info 4 /INPUT 1 "s0";
+    .port_info 5 /INPUT 1 "s1";
+    .port_info 6 /OUTPUT 1 "y";
+v0x5e146913b7d0_0 .net "i0", 0 0, v0x5e14691627a0_0;  1 drivers
+v0x5e1469162090_0 .net "i1", 0 0, v0x5e1469162860_0;  1 drivers
+v0x5e1469162150_0 .net "i2", 0 0, v0x5e1469162900_0;  1 drivers
+v0x5e14691621f0_0 .net "i3", 0 0, v0x5e14691629d0_0;  1 drivers
+v0x5e14691622b0_0 .net "s0", 0 0, v0x5e1469162aa0_0;  1 drivers
+v0x5e14691623c0_0 .net "s1", 0 0, v0x5e1469162b40_0;  1 drivers
+v0x5e1469162480_0 .net "w1", 0 0, L_0x5e1469162ce0;  1 drivers
+v0x5e1469162540_0 .net "w2", 0 0, L_0x5e1469162ea0;  1 drivers
+v0x5e1469162600_0 .net "y", 0 0, L_0x5e1469162fe0;  alias, 1 drivers
+L_0x5e1469162ce0 .functor MUXZ 1, v0x5e14691627a0_0, v0x5e1469162860_0, v0x5e1469162aa0_0, C4<>;
+L_0x5e1469162ea0 .functor MUXZ 1, v0x5e1469162900_0, v0x5e14691629d0_0, v0x5e1469162aa0_0, C4<>;
+L_0x5e1469162fe0 .functor MUXZ 1, L_0x5e1469162ce0, L_0x5e1469162ea0, v0x5e1469162b40_0, C4<>;
+    .scope S_0x5e1469149960;
+T_0 ;
+    %vpi_call 2 16 "$monitor", "$time=%0t|i0=%b|i1=%b|i2=%b|i3=%b|s0=%b|s1=%b|y=%b", $time, v0x5e14691627a0_0, v0x5e1469162860_0, v0x5e1469162900_0, v0x5e14691629d0_0, v0x5e1469162aa0_0, v0x5e1469162b40_0, v0x5e1469162c10_0 {0 0 0};
+    %vpi_call 2 17 "$dumpfile", "mux4to1using2to1.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5e1469149960 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e14691627a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e1469162860_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e1469162900_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e14691629d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e1469162b40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e1469162aa0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 21 "$display", "s1=%b s0=%b y=%b (expected i0=%b)", v0x5e1469162b40_0, v0x5e1469162aa0_0, v0x5e1469162c10_0, v0x5e14691627a0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e1469162b40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e1469162aa0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 23 "$display", "s1=%b s0=%b y=%b (expected i1=%b)", v0x5e1469162b40_0, v0x5e1469162aa0_0, v0x5e1469162c10_0, v0x5e1469162860_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e1469162b40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e1469162aa0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 25 "$display", "s1=%b s0=%b y=%b (expected i2=%b)", v0x5e1469162b40_0, v0x5e1469162aa0_0, v0x5e1469162c10_0, v0x5e1469162900_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e1469162b40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e1469162aa0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 27 "$display", "s1=%b s0=%b y=%b (expected i3=%b)", v0x5e1469162b40_0, v0x5e1469162aa0_0, v0x5e1469162c10_0, v0x5e14691629d0_0 {0 0 0};
+    %vpi_call 2 28 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "mux4to1using2to1_tb.v";
+    "mux4to1using2to1.v";
