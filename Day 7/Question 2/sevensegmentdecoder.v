@@ -1,5 +1,5 @@
-module seven_seg_decoder (
-    input  [3:0] bcd,
+module sevensegmentdecoder (
+    input [3:0] bcd,
     output reg [6:0] seg
 );
     always @(*) begin
@@ -18,3 +18,20 @@ module seven_seg_decoder (
         endcase
     end
 endmodule
+
+
+/*output
+meenakshi@meenakshi-Inspiron-3501:~/verilog/sevensegmentdecoder$ vvp sevensegmentdecoder.out
+VCD info: dumpfile sevensegmentdecoder.vcd opened for output.
+$time=0|bcd=0000|seg=1111110
+$time=10|bcd=0001|seg=0110000
+$time=20|bcd=0010|seg=1101101
+$time=30|bcd=0011|seg=1111001
+$time=40|bcd=0100|seg=0110011
+$time=50|bcd=0101|seg=1011011
+$time=60|bcd=0110|seg=1011111
+$time=70|bcd=0111|seg=1110000
+$time=80|bcd=1000|seg=1111111
+$time=90|bcd=1001|seg=1111011
+sevensegmentdecoder_tb.v:22: $finish called at 100 (1s)
+*/
