@@ -9,3 +9,17 @@ module graytobinary (
         bin[i] = bin[i+1] ^ gray[i];
     end
 endmodule
+
+
+/*output
+meenakshi@meenakshi-Inspiron-3501:~/verilog/graytobinary$ vvp graytobinary.out
+VCD info: dumpfile graytobinary.vcd opened for output.
+Time  Gray   Binary
+0   0000   0000
+10   0001   0001
+20   0011   0010
+30   0010   0011
+40   0110   0100
+50   1110   1011
+graytobinary_tb.v:19: $finish called at 60 (1s)
+*/
