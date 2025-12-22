@@ -1,0 +1,63 @@
+$date
+	Mon Dec 22 13:18:00 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module bcd_adder_tb $end
+$var wire 4 ! Sum [3:0] $end
+$var wire 1 " Cout $end
+$var reg 4 # A [3:0] $end
+$var reg 4 $ B [3:0] $end
+$scope module dut $end
+$var wire 4 % A [3:0] $end
+$var wire 4 & B [3:0] $end
+$var wire 5 ' s [4:0] $end
+$var wire 4 ( Sum [3:0] $end
+$var wire 1 " Cout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b111 (
+b111 '
+b100 &
+b11 %
+b100 $
+b11 #
+0"
+b111 !
+$end
+#10
+b1 !
+b1 (
+1"
+b110 $
+b110 &
+b1011 '
+b101 #
+b101 %
+#20
+b1000 !
+b1000 (
+b1001 $
+b1001 &
+b10010 '
+b1001 #
+b1001 %
+#30
+b0 !
+b0 (
+b1000 $
+b1000 &
+b1010 '
+b10 #
+b10 %
+#40

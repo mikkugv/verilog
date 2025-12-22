@@ -1,0 +1,83 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5c31ee619830 .scope module, "bcd_adder_tb" "bcd_adder_tb" 2 1;
+ .timescale 0 0;
+v0x5c31ee6304d0_0 .var "A", 3 0;
+v0x5c31ee6305b0_0 .var "B", 3 0;
+v0x5c31ee630650_0 .net "Cout", 0 0, L_0x5c31ee640db0;  1 drivers
+v0x5c31ee630720_0 .net "Sum", 3 0, L_0x5c31ee641160;  1 drivers
+S_0x5c31ee6199c0 .scope module, "dut" "bcd_adder" 2 5, 3 1 0, S_0x5c31ee619830;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /INPUT 4 "B";
+    .port_info 2 /OUTPUT 4 "Sum";
+    .port_info 3 /OUTPUT 1 "Cout";
+v0x5c31ee619c10_0 .net "A", 3 0, v0x5c31ee6304d0_0;  1 drivers
+v0x5c31ee62f800_0 .net "B", 3 0, v0x5c31ee6305b0_0;  1 drivers
+v0x5c31ee62f8e0_0 .net "Cout", 0 0, L_0x5c31ee640db0;  alias, 1 drivers
+v0x5c31ee62f980_0 .net "Sum", 3 0, L_0x5c31ee641160;  alias, 1 drivers
+v0x5c31ee62fa60_0 .net *"_ivl_0", 4 0, L_0x5c31ee6307f0;  1 drivers
+v0x5c31ee62fb90_0 .net *"_ivl_10", 31 0, L_0x5c31ee630c00;  1 drivers
+L_0x722a399570a8 .functor BUFT 1, C4<000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x5c31ee62fc70_0 .net *"_ivl_13", 26 0, L_0x722a399570a8;  1 drivers
+L_0x722a399570f0 .functor BUFT 1, C4<00000000000000000000000000001001>, C4<0>, C4<0>, C4<0>;
+v0x5c31ee62fd50_0 .net/2u *"_ivl_14", 31 0, L_0x722a399570f0;  1 drivers
+L_0x722a39957138 .functor BUFT 1, C4<00110>, C4<0>, C4<0>, C4<0>;
+v0x5c31ee62fe30_0 .net/2u *"_ivl_18", 4 0, L_0x722a39957138;  1 drivers
+v0x5c31ee62ff10_0 .net *"_ivl_20", 4 0, L_0x5c31ee640f90;  1 drivers
+v0x5c31ee62fff0_0 .net *"_ivl_22", 4 0, L_0x5c31ee6410c0;  1 drivers
+L_0x722a39957018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x5c31ee6300d0_0 .net *"_ivl_3", 0 0, L_0x722a39957018;  1 drivers
+v0x5c31ee6301b0_0 .net *"_ivl_4", 4 0, L_0x5c31ee630910;  1 drivers
+L_0x722a39957060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x5c31ee630290_0 .net *"_ivl_7", 0 0, L_0x722a39957060;  1 drivers
+v0x5c31ee630370_0 .net "s", 4 0, L_0x5c31ee630a50;  1 drivers
+L_0x5c31ee6307f0 .concat [ 4 1 0 0], v0x5c31ee6304d0_0, L_0x722a39957018;
+L_0x5c31ee630910 .concat [ 4 1 0 0], v0x5c31ee6305b0_0, L_0x722a39957060;
+L_0x5c31ee630a50 .arith/sum 5, L_0x5c31ee6307f0, L_0x5c31ee630910;
+L_0x5c31ee630c00 .concat [ 5 27 0 0], L_0x5c31ee630a50, L_0x722a399570a8;
+L_0x5c31ee640db0 .cmp/gt 32, L_0x5c31ee630c00, L_0x722a399570f0;
+L_0x5c31ee640f90 .arith/sum 5, L_0x5c31ee630a50, L_0x722a39957138;
+L_0x5c31ee6410c0 .functor MUXZ 5, L_0x5c31ee630a50, L_0x5c31ee640f90, L_0x5c31ee640db0, C4<>;
+L_0x5c31ee641160 .part L_0x5c31ee6410c0, 0, 4;
+    .scope S_0x5c31ee619830;
+T_0 ;
+    %vpi_call 2 7 "$monitor", "$time=%0t,A=%b,B=%b,Sum=%b,Cout=%b", $time, v0x5c31ee6304d0_0, v0x5c31ee6305b0_0, v0x5c31ee630720_0, v0x5c31ee630650_0 {0 0 0};
+    %vpi_call 2 8 "$dumpfile", "bcd_adder.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5c31ee619830 {0 0 0};
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0x5c31ee6304d0_0, 0, 4;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0x5c31ee6305b0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0x5c31ee6304d0_0, 0, 4;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x5c31ee6305b0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0x5c31ee6304d0_0, 0, 4;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0x5c31ee6305b0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x5c31ee6304d0_0, 0, 4;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v0x5c31ee6305b0_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 14 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "bcd_adder_tb.v";
+    "bcd_adder.v";
