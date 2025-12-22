@@ -1,0 +1,61 @@
+$date
+	Mon Dec 22 14:27:55 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module nbitcomparator_tb $end
+$var wire 1 ! lt $end
+$var wire 1 " gt $end
+$var wire 1 # eq $end
+$var reg 4 $ A [3:0] $end
+$var reg 4 % B [3:0] $end
+$scope module dut $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var wire 1 ! A_lesser_B $end
+$var wire 1 " A_greater_B $end
+$var wire 1 # A_equal_B $end
+$var parameter 32 ( N $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 (
+$end
+#0
+$dumpvars
+b10 '
+b100 &
+b10 %
+b100 $
+0#
+1"
+0!
+$end
+#10
+0"
+1!
+b111 %
+b111 '
+b11 $
+b11 &
+#20
+0!
+1#
+b101 %
+b101 '
+b101 $
+b101 &
+#30
+b1 %
+b1 '
+1"
+0#
+b1001 $
+b1001 &
+#40

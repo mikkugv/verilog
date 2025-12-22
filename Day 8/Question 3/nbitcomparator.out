@@ -1,0 +1,66 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5bbdab22dc20 .scope module, "nbitcomparator_tb" "nbitcomparator_tb" 2 1;
+ .timescale 0 0;
+v0x5bbdab240ff0_0 .var "A", 3 0;
+v0x5bbdab2410d0_0 .var "B", 3 0;
+v0x5bbdab241170_0 .net "eq", 0 0, L_0x5bbdab241680;  1 drivers
+v0x5bbdab241240_0 .net "gt", 0 0, L_0x5bbdab241400;  1 drivers
+v0x5bbdab241310_0 .net "lt", 0 0, L_0x5bbdab241590;  1 drivers
+S_0x5bbdab22ddb0 .scope module, "dut" "nbitcomparator" 2 4, 3 1 0, S_0x5bbdab22dc20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /INPUT 4 "B";
+    .port_info 2 /OUTPUT 1 "A_greater_B";
+    .port_info 3 /OUTPUT 1 "A_lesser_B";
+    .port_info 4 /OUTPUT 1 "A_equal_B";
+P_0x5bbdab22df90 .param/l "N" 0 3 2, +C4<00000000000000000000000000000100>;
+v0x5bbdab21bea0_0 .net "A", 3 0, v0x5bbdab240ff0_0;  1 drivers
+v0x5bbdab240c00_0 .net "A_equal_B", 0 0, L_0x5bbdab241680;  alias, 1 drivers
+v0x5bbdab240cc0_0 .net "A_greater_B", 0 0, L_0x5bbdab241400;  alias, 1 drivers
+v0x5bbdab240d60_0 .net "A_lesser_B", 0 0, L_0x5bbdab241590;  alias, 1 drivers
+v0x5bbdab240e20_0 .net "B", 3 0, v0x5bbdab2410d0_0;  1 drivers
+L_0x5bbdab241400 .cmp/gt 4, v0x5bbdab240ff0_0, v0x5bbdab2410d0_0;
+L_0x5bbdab241590 .cmp/gt 4, v0x5bbdab2410d0_0, v0x5bbdab240ff0_0;
+L_0x5bbdab241680 .cmp/eq 4, v0x5bbdab240ff0_0, v0x5bbdab2410d0_0;
+    .scope S_0x5bbdab22dc20;
+T_0 ;
+    %vpi_call 2 11 "$monitor", "A=%d B=%d | GT=%b LT=%b EQ=%b", v0x5bbdab240ff0_0, v0x5bbdab2410d0_0, v0x5bbdab241240_0, v0x5bbdab241310_0, v0x5bbdab241170_0 {0 0 0};
+    %vpi_call 2 12 "$dumpfile", "nbitcomparator.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5bbdab22dc20 {0 0 0};
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0x5bbdab240ff0_0, 0, 4;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x5bbdab2410d0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0x5bbdab240ff0_0, 0, 4;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v0x5bbdab2410d0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0x5bbdab240ff0_0, 0, 4;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0x5bbdab2410d0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0x5bbdab240ff0_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x5bbdab2410d0_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 18 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "nbitcomparator.v";
+    "nbitcomparator_tb.v";
