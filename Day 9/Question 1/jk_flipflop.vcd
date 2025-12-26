@@ -1,0 +1,51 @@
+$date
+	Fri Dec 26 10:12:03 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module jk_flipflop_tb $end
+$var wire 1 ! Qbar $end
+$var wire 1 " Q $end
+$var reg 1 # J $end
+$var reg 1 $ K $end
+$var reg 1 % clk $end
+$scope module dut $end
+$var wire 1 # J $end
+$var wire 1 $ K $end
+$var wire 1 ! Qbar $end
+$var wire 1 % clk $end
+$var reg 1 " Q $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0%
+0$
+0#
+x"
+x!
+$end
+#10
+1!
+0"
+1$
+1%
+#20
+0$
+1#
+0%
+#30
+0!
+1"
+1$
+1%
+#40
+0%
